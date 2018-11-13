@@ -5,8 +5,9 @@
  */
 package iiiexamengrupo4003;
 
-/**
- *
+import Caso3_State.*;
+
+ /*
  * @author mcv26
  */
 public class IIIExamenGrupo4003 {
@@ -15,7 +16,35 @@ public class IIIExamenGrupo4003 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //Ejecucion Caso 3
+        
+        Robot robot = new Robot();
+        Estado on = new On();
+        Estado off = new Off();
+        Estado walk = new Walk();
+        Estado cook = new Cook();
+        
+        System.out.print(on.toString()+": ");
+        on.Accion(robot);
+        System.out.print(off.toString()+": ");
+        off.Accion(robot);
+        System.out.print(cook.toString()+": ");
+        cook.Accion(robot);
+        System.out.print(walk.toString()+": ");
+        walk.Accion(robot);
+        System.out.print(off.toString()+": ");
+        off.Accion(robot);
+        System.out.print(on.toString()+": ");
+        on.Accion(robot);
+        System.out.print(cook.toString()+": ");
+        cook.Accion(robot);
+        System.out.print(off.toString()+": ");
+        off.Accion(robot);
+        System.out.print(walk.toString()+": ");
+        walk.Accion(robot);
+        System.out.print(off.toString()+": ");
+        off.Accion(robot);
+        
     }
     
 }
