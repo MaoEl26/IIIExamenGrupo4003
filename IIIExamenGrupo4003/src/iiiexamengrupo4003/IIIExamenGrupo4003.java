@@ -6,6 +6,21 @@
 package iiiexamengrupo4003;
 
 
+import Caso2_Command.Browser;
+import Caso2_Command.BrowserJob;
+import Caso2_Command.Correo;
+import Caso2_Command.CorreoJob;
+import Caso2_Command.FileIO;
+import Caso2_Command.FileIOJob;
+import Caso2_Command.Galeria;
+import Caso2_Command.GaleriaJob;
+import Caso2_Command.Logging;
+import Caso2_Command.LoggingJob;
+import Caso2_Command.Musica;
+import Caso2_Command.MusicaJob;
+import Caso2_Command.SMS;
+import Caso2_Command.SMSJob;
+import Caso2_Command.Subproceso;
 import Caso3_State.*;
 
  /*
@@ -22,7 +37,88 @@ public class IIIExamenGrupo4003 {
         System.out.println("-----------------------------------------------------");
         System.out.println("Caso 2 - Iterator");
         
-                
+        Subproceso pool = new Subproceso(10);
+
+        
+
+        SMS sms = null;
+
+        SMSJob smsJob = new SMSJob();
+        
+        Correo correo = null;
+
+        CorreoJob  correoJob = new CorreoJob();
+
+        FileIO fileIO = null;;
+
+        FileIOJob fileIOJob = new FileIOJob();
+
+        Logging logging = null;
+
+        LoggingJob logJob = new LoggingJob();
+        
+        Galeria galeria = null;
+        
+        GaleriaJob galeriaJob = new GaleriaJob();
+        
+        Musica musica = null;
+        
+        MusicaJob musicaJob = new MusicaJob();
+        
+        Browser browser = null;
+        
+        BrowserJob browserJob = new BrowserJob();
+
+        for (int i = 0; i < 8; i++) {
+
+            correo = new Correo();
+
+            correoJob.setCorreo(correo);
+
+            sms = new SMS();
+
+            smsJob.setSMS(sms);
+
+            fileIO = new FileIO();
+
+            fileIOJob.setFileIO(fileIO);
+
+            logging = new Logging();
+
+            logJob.setLogging(logging);
+            
+            galeria = new Galeria();
+            
+            galeriaJob.setGaleria(galeria);
+            
+            musica = new Musica();
+            
+            musicaJob.setMusica(musica);
+            
+            browser = new Browser();
+            
+            browserJob.setBrowser(browser);
+            
+
+            pool.addJob(correoJob);
+
+            pool.addJob(smsJob);
+
+            pool.addJob(fileIOJob);
+
+            pool.addJob(logJob);
+            
+            pool.addJob(galeriaJob);
+            
+            pool.addJob(musicaJob);
+            
+            pool.addJob(browserJob);
+
+        }
+
+        pool.shutdownPool();
+
+           
                 
         System.out.println("-----------------------------------------------------");
         
