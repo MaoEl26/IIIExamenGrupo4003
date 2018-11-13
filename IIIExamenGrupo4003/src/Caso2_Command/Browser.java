@@ -3,19 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Caso2_Iterator;
+package Caso2_Command;
 
 /**
  *
  * @author Gerardo Villalobos
  */
+public class Browser {
+    
+    public void abrirBrowser(){
 
-public interface ProcessCollection {
-
-	public void addProcess(Process p);
-	
-	public void removeProcess(Process p);
-	
-	public ProcessIterator iterator(ProcessTypeEnum type);
-	
+        System.out.println("Abriendo browser...");
+    }
+    
 }

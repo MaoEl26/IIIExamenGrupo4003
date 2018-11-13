@@ -3,9 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Caso2_Iterator;
+package Caso2_Command;
 
-public enum ProcessTypeEnum {
+/**
+ *
+ * @author Gerardo Villalobos
+ */
+public class SMS {
+        
+        public void enviarSMS(){
 
-	EMAIL, SMS, GALLERY, PLAY_MUSIC, PLAY_VIDEO, BROWSER, TEXT_FILE, BD, YOUTUBE, ALL;
+        System.out.println("Enviando SMS...");
+
+    }
+
 }

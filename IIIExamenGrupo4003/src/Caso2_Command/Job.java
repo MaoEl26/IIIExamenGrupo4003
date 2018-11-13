@@ -3,17 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Caso2_Iterator;
+package Caso2_Command;
 
 /**
  *
  * @author Gerardo Villalobos
  */
+public interface Job {
+    
+    public void run();
 
-public interface ProcessIterator {
-
-	public boolean hasNext();
-	
-	public Process next();
 }
-
